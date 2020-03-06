@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/* CSS Document */
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: Arial, sans-serif;
+	margin: 0;
+}
+#deskNav{
+	width:100%;
+	background-color: #989898;
+	height: 110px;
+	z-index: 1000;
+	position: relative;
+}
+#deskNav ul{
+	width:90%;
+	height: 110px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 0;
+}
+.navLi{
+	display: flex;
+	font-family: "Arial";
+	font-size: 25px;
+	align-items: center;
+	position: relative;
+	padding:20px 0;
+	width:20%;
+	text-align: center;
+}
+.navLi a{
+	color: #fff;
+	text-decoration: none;
+	margin: 0 auto;
+
+}
+		
+.navLi:after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width:0%;
+	height: 2px;
+	background-color: #fff;
+	transition: .5s ease-in-out;
+}
+.navLi:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width:0%;
+	height: 2px;
+	background-color: #fff;
+	transition: .5s ease-in-out;
+}
+.navLi:hover:before{
+	width:100%;
+}
+.navLi:hover:after{
+	width:100%;
+}
+
+.logo{
+	width:180px;
+	align-self: flex-start;
+	transition: .5s;
+}
+
+#logo:hover{
+	transform: rotate(5deg);
+}
+
+#mobileNav{
+	display: none;	
+}
+#mobileUl{
+	display: none;
+}
+
+
+
+@media screen and (max-width: 800px){
+	#navLogo{
+		width:100px;
+		position: absolute;
+		left: 10px;
+	}
+	#para{
+		text-align: center;
+	}
+	#deskNav{
+		display: none;
+	}
+	#mobileNav{
+		background-color: #989898;
+		display: block;
+		height: 110px;
+		z-index:1000;
+	}
+	#mobileUl{
+		background-color: #989898;
+		position: absolute;
+		top: 94px;
+		width:100%;
+		z-index: 1000;
+		right: 0;
+		text-align: center;
+		displey:none;
+	}
+	.mobileNavLi{
+		display: block;
+		padding: 20px 0;
+		
+		
+	}
+	.mobileNavLi:hover{
+		background-color: dimgray;
+	}
+	.mobileNavLi a{
+		text-decoration: none;
+		color: #fff;
+		font-size: 20px;
+	}
+	#hambContainer{
+		position: absolute;
+		right: 25px;
+		top: 25px;
+	}
+	.hamb{
+		width:50px;
+		height: 5px;
+		background-color: #fff;
+		margin: 11px 0;
+	}
+}
+
+
+
+
+
+
+
+
+footer{
+	clear:both;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #979797;
+	padding: 30px 0;
+	width:100%!important;
+}
+		

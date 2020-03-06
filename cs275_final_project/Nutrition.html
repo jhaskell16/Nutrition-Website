@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>Nutrition Calculator - Nutrition</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="nutrition.css" rel="stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="navigation.css">
+		
+	</head>
+	<body style="background-color: white">
+		<nav id="deskNav">
+		<ul>
+			<li class="navLi"><a href="index.html">Home</a></li>
+			<li class="navLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		
+			<a href="index.html" class="logo"><img src="logo.png" class="logo" id="logo"></a>
+			
+			<li class="navLi"><a href="nutrition.html">Nutrition</a></li>
+			<li class="navLi"><a href="about-us.html">About Us</a></li>
+		</ul>
+	</nav>
+	
+	<nav id="mobileNav">
+		<a href="index.html" id="navLogoLink"><img src="logo.png" id="navLogo"></a>
+		
+		<div id="hambContainer" onClick="toggle()" style="z-index:2000;">
+			<div id="top-ham" class="hamb"></div>
+			<div id="mid-ham" class="hamb"></div>
+			<div id="bottom-ham" class="hamb"></div>
+		</div>
+	</nav>
+	<ul id="mobileUl">
+		<li class="mobileNavLi"><a href="index.html">Home</a></li>
+		<li class="mobileNavLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		<li class="mobileNavLi"><a href="nutrition.html">Nutrition</a></li>
+		<li class="mobileNavLi"><a href="about-us.html">About Us</a></li>
+	</ul>
+	
+		<div id="hero">
+			<h1>Nutrition</h1>
+		</div>
+		<div id="content-Container">
+			
+		
+		<h2 class="heading" id="mainHead">Why is healthy eating important?</h2>
+			<p id="para">Good nutrition is a vital part of a healthy lifestyle. 
+			A healthy diet can help you reach and maintain a healthy weight. 
+			It can also help reduce the risk of caloric diseases such as cancer, diabetes, and heart disease. A healthy diet can also help you feel more energized throughout the day. 
+			There is more to a healthy diet than just eating healthy foods, it is also important to stay hydrated throughout the day to prevent dissiness and fatigue. Also, make sure to avoid having too many calories in your diet as this could have negative consequences on your health. </p>
+		<hr>
+		<div class="contentSection">
+		<div class="text">
+		<h2 class="heading">What kinds of foods should I eat?</h2>
+			<ol style="list-style-type: number;">
+				<li>Whole Eggs</li>
+				<li>Leafy Greens and Salads</li>
+				<li>Lean Beef and Chicken (Unprocessed)</li>
+				<li>Fish (Tuna and Salmon)</li>
+				<li>Mixed Nuts</li>
+				</ol>
+			</div>
+			<div class="imgContainer"><img src="Health.jpeg" name="image2" width="100%" class="ContentImage"></div>
+			</div>
+		<hr>
+		<div class="contentSection">
+		<div class="text2">
+		<h2 class="heading">What kinds of foods should I avoid?</h2>
+			<ol style="list-style-type: number;">
+				<li>Sugary Drinks</li>
+				<li>Processed Meats</li>
+				<li>Fast Foods</li>
+				<li>Fried Foods</li>
+				<li>Microwave Popcorn</li>
+				</ol>
+			</div>
+			<div class="imgContainer"><img src="Junk-Food.jpg" name="image2" width="100%" class="ContentImage2"></div>
+			</div>
+		<hr>
+		<div class="contentSection">
+		<div class="text">
+		<h2 class="heading">5 Benefits of Healthy Eating</h2>
+			<ol style="list-style-type: number;">
+				<li>Weight Loss</li>
+				<li>Reduced risk of Cancer</li>
+				<li>Reduced risk of Diabetes</li>
+				<li>Strong bones and teeth</li>
+				<li>A feeling of overall well being</li>
+			</ol>
+			</div>
+			<div class="imgContainer"><img src="food2.jpg" name="image2" width="100%" class="contentImage">
+			</div>
+			<br/>
+		</div>
+		</div>
+		<footer style="width:100%;">
+		<img src="logo.png">
+	</footer>
+		<script>
+		
+			function toggle(){
+				var mobileNav = document.getElementById("mobileUl");
+				if(mobileNav.style.display != "block"){
+					mobileNav.style.display = "block";
+				}else{
+					mobileNav.style.display = "none"
+				}
+			
+			}
+		
+		</script>
+	</body>
+
+</html>

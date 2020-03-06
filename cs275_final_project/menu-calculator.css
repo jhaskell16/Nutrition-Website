@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	box-sizing: border-box;
+	
+}
+#hero{
+	width:100%;
+	height:400px;
+	background-color: gray;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+	background-image: url(food.jpg);
+	background-blend-mode: multiply;
+	background-position: center;
+	background-size: cover;
+
+
+}
+#hero h1{
+	margin:0;
+	color: #fff;
+	text-shadow: 0 0 8px #000;
+}
+#form-container{
+	background-color: #EAF0F8;
+	width:100%;
+	padding: 60px 0;
+}
+
+.lable{
+	margin-top: 0px;
+}
+#inputForm{
+	margin: 0 auto;
+	background-color: #fff;
+	width: 50%;
+	padding: 20px;
+}
+input, .select, option, select{
+	font-size: 20px;
+}
+.lable{
+	margin-bottom: 5px;
+	color:darkgreen;
+}
+input{
+	margin-bottom: 20px;
+}
+select, #ageInput{
+	width:100%;
+}
+#submit{
+	margin-top: 30px;
+	background-color:darkgreen;
+	color:#fff;
+	font-size: 20px;
+	padding: 5px 20px;
+	border-radius: 50px;
+}
+
+#resultsContainer{
+	display: none;
+}
+
+#dayNav{
+	position: fixed;
+	top:30%;
+	background-color: rgba(255,255,255,.9);
+	transition:.5s ease-in-out;
+	display: none;
+	z-index: 3000;
+	border-right: 10px solid darkgreen;
+	width:0px;
+	overflow:hidden;
+	left:0;	
+	
+}
+#dayNav:hover{
+	width:200px;
+	padding: 0 30px;
+}
+
+h3{
+	padding: 0 30px;
+}
+.menu{
+	margin-bottom: 20px;
+}
+.day a{
+	text-decoration: none;
+	color: darkgreen;
+}
+
+.menu{
+	font-size: 30px;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+}
+.dayHeading{
+	position: sticky;
+	top: 0px;
+	background-color: darkgreen;
+	z-index: 1000;
+	padding: 10px 20px;
+	color:#fff;
+}
+
+/*MENU*/
+.formContainer{
+			/*display: grid;
+			grid-template-columns: 5;
+			grid-row: 1;*/
+			overflow-x: scroll;
+			overflow-y:hidden;
+			height: 300px;
+			padding: 10px 0;
+			background-color: #EAF0F8;
+			position: relative;
+			width:auto;
+			white-space: nowrap;
+			
+		}
+.caloriesLeft{
+	font-size: 40px;
+}
+		.foodChoice{
+			width:300px;
+			height: 300px;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			border-radius: 20px;
+			overflow: hidden;
+			box-shadow: 5px 5px 10px gray;
+			/*grid-row: 1/2;*/
+			margin: 0 10px;
+			background-color:#fff;
+			display: inline-block;
+			
+		}
+		.banana{
+			background-image: url("bananas.jpg");
+		}
+		.eggs{
+			background-image: url("eggs.jpg");
+		}
+		.apple{
+			background-image: url("apple.jpg");
+		}
+		.bacon{
+			background-image: url("bacon.jpg");
+		}
+		.grilledCheese{
+			background-image: url("grilled-cheese.jpg");
+		}
+		.turkeySandwich{
+			background-image: url("Turkey.jpg");
+		}
+		.cheeseBurger{
+			background-image: url("Cheeseburger.jpg");
+		}
+		.salad{
+			background-image: url("Salad2.jpg");
+		}
+		.pasta{
+			background-image: url("pasta.jpg");
+		}
+		.pizza{
+			background-image: url("pizza.jpg");
+		}
+		.chicken{
+			background-image: url("Chicken.jpg");
+		}
+		.salmon{
+			background-image: url("salmon.jpg");
+		}
+		.foodChoice-header{
+			background-color: rgba(211,211,211,.8);
+			width:100%;
+			height: 75px;
+			text-align: center;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.checked{
+			opacity: 0;
+		}
+

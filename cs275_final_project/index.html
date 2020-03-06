@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nutrician Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		
+		body{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: "Arial";
+		}
+		
+		
+		
+		
+	</style>
+	<link type="text/css" rel="stylesheet" href="index.css">
+	<link type="text/css" rel="stylesheet" href="navigation.css">
+</head>
+
+<body>
+	<nav id="deskNav">
+		<ul>
+			<li class="navLi"><a href="index.html">Home</a></li>
+			<li class="navLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		
+			<a href="index.html" class="logo"><img src="logo.png" class="logo" id="logo"></a>
+			
+			<li class="navLi"><a href="nutrition.html">Nutrition</a></li>
+			<li class="navLi"><a href="about-us.html">About Us</a></li>
+		</ul>
+	</nav>
+	
+	<nav id="mobileNav">
+		<a href="index.html" id="navLogoLink"><img src="logo.png" id="navLogo"></a>
+		
+		<div id="hambContainer" onClick="toggle()">
+			<div id="top-ham" class="hamb"></div>
+			<div id="mid-ham" class="hamb"></div>
+			<div id="bottom-ham" class="hamb"></div>
+		</div>
+	</nav>
+	<ul id="mobileUl">
+		<li class="mobileNavLi"><a href="index.html">Home</a></li>
+		<li class="mobileNavLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		<li class="mobileNavLi"><a href="nutrition.html">Nutrition</a></li>
+		<li class="mobileNavLi"><a href="about-us.html">About Us</a></li>
+	</ul>
+	
+	<div id="hero">
+		<h1 id="siteTitle">Nutrician Calculator</h1>
+		<p id="subTitle">The Key To A Healthy Living Is A Well Balanced Diet</p>
+		<div id="scollAnimContainer">
+		<a href="#contentSection" id="scrollAnim">
+                    <svg version="1.1" id="scroll-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48.85 148.28" style="enable-background:new 0 0 48.85 148.28; width:28px;">
+                        <style type="text/css">
+                            .st0{fill:none;stroke:#ffffff;stroke-width:4;stroke-miterlimit:10;}
+                        </style>
+                        <path class="st0" d="M24.71,144.83L24.71,144.83c-11.11,0-20.11-9.01-20.11-20.11V23.56c0-11.11,9.01-20.11,20.11-20.11h0
+        c11.11,0,20.11,9.01,20.11,20.11v101.15C44.83,135.82,35.82,144.83,24.71,144.83z"/>
+                        <path id="scroll-anim" d="M24.71,82.18L24.71,82.18c2.7,0,4.89-2.19,4.89-4.89V22.13c0-2.7-2.19-4.89-4.89-4.89h0c-2.7,0-4.89,2.19-4.89,4.89V77.3
+        C19.83,80,22.01,82.18,24.71,82.18z" style="fill:#fff;"/>
+                    </svg>
+                </a>
+		</div>
+	</div>
+	
+	<div id="contentSection">
+		<h2>The Importance of Healthy Eating</h2>
+		
+		<p>What you eat effects how you feel and operate everyday. Good nutrition is the foundation of a healthy lifestyle and, balanced with physical exercise, 
+			can help you maintain your desired weight and reduce the risk of chronic diseases 
+			such as heart disease.</p>
+			<p>About 1/3 (33.8%) of American adults are obese and about 12.5 million (17%) of 
+			children 2-19 yrs. are also obese. Even those with a healthy weight are at risk of 
+			serious illness due to unhealthy eating. Teaching kids healthy nutrition at a young 
+			age is vital as food habits more than often carry over into adulthood.</p>
+			<p>For more information on maintaing a healthy lifestyle, 
+			<a href="https://www.hhs.gov/fitness/eat-healthy/importance-of-good-nutrition/index.html" target="_blank">CLICK HERE.</a></p>
+			<!--<img src="./eating-healthy.jp" alt="Balnced Diet Fruits and Veg"> <!--Edit size for Session II-->
+		</div>
+		
+	<!--[if IE]>
+		#buttonBigContainer{
+			width:40%;
+		}
+	<![endif]-->
+		
+	<div id="buttonBigContainer">
+	
+	<div id="buttonsSection">
+	
+		<div class="buttons" id="button1">
+			<h1 style="text-shadow: none;">Resources</h1>
+		</div>
+		<a href="menu-calculator.html" id="button2Link"><div class="buttons" id="button2" onMouseOver="button2Change()">
+			<h1>Menu Calculator</h1>
+		</div></a>
+		<a href="Nutrition.html" id="button3Link"><div class="buttons" id="button3">
+			<h1>Balanced Diet</h1>
+		</div></a>
+		<a href="about-us.html" id="button4Link"><div class="buttons" id="button4">
+			<h1>About Us</h1>
+		</div></a>
+	
+	</div>
+		</div>
+	<footer style="margin-top:30px;">
+		<img src="logo.png">
+	</footer>
+		
+	<script>
+	
+		function scrolled(){
+			var offset = window.pageYOffset;
+			var hero = document.getElementById("hero");
+			hero.style.backgroundPositionY = offset * -.5 + "px";
+			console.log(offset);
+			
+			
+			
+			
+		}
+		window.addEventListener("scroll", scrolled);
+		
+		function toggle(){
+			var mobileNav = document.getElementById("mobileUl");
+			if(mobileNav.style.display != "block"){
+				mobileNav.style.display = "block";
+			}else{
+				mobileNav.style.display = "none";
+			}
+		}
+	
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="navigation.css" rel="stylesheet" type="text/css">
+	<link href="menu-calculator.css" rel="stylesheet" type="text/css">
+<title>Food Calculator - Menu Calculator</title>
+</head>
+<body>
+	<nav id="deskNav">
+		<ul>
+			<li class="navLi"><a href="index.html">Home</a></li>
+			<li class="navLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+
+			<a href="index.html" class="logo"><img src="logo.png" class="logo" id="logo"></a>
+
+			<li class="navLi"><a href="nutrition.html">Nutrition</a></li>
+			<li class="navLi"><a href="about-us.html">About Us</a></li>
+		</ul>
+	</nav>
+
+	<nav id="mobileNav">
+		<a href="index.html" id="navLogoLink"><img src="logo.png" id="navLogo"></a>
+
+		<div id="hambContainer" onclick="toggle()">
+			<div id="top-ham" class="hamb"></div>
+			<div id="mid-ham" class="hamb"></div>
+			<div id="bottom-ham" class="hamb"></div>
+		</div>
+	</nav>
+	<ul id="mobileUl">
+		<li class="mobileNavLi"><a href="index.html">Home</a></li>
+		<li class="mobileNavLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		<li class="mobileNavLi"><a href="nutrition.html">Nutrition</a></li>
+		<li class="mobileNavLi"><a href="about-us.html">About Us</a></li>
+	</ul>
+	
+	<div id="hero">
+		<h1>Menu Calculator</h1>
+	</div>
+	
+	
+	<!--FOOD FORM-->
+	<div id="form-container">
+		<div id="inputForm">
+			<form name="inputForm">
+
+				<h2 class="label">Gender:</h2>
+				<input type="radio" name="genderSel" value="male" class="radioButtons"/><span class="select">Male</span> <input type="radio" name="genderSel" value="female" class="radioButtons"><span class="select"/>Female</span>
+				<h2 class="label">Age:</h2>
+				<input type="text" id="ageInput"/>
+				<h2 class="label">Activity level:</h2>
+				<select name="mySelect">
+					<option value="sedentary">Sedentary</option>
+					<option value="moderate">Moderately Active</option>
+					<option value="active">Active</option>
+				</select>
+				
+
+			</form>
+				
+			<a href="#monday"><button type="submit" id="submit" onclick="calculate();menuAppear();display();">Submit</button></a>
+			
+		</div>
+		<div id="suggested-container">
+			<p align="center">Based on the given information, the WHO suggests the following daily calorie intake:</p><p id="suggested-cals" align="center"></p>
+			<p align="center" id="suggest-menu"></p>
+		</div>
+	</div>
+	
+	<div id="resultsContainer">
+	
+		<div id="dayNav">
+			<p class="day"><a href="#monday">Monday</a></p>
+			<p class="day"><a href="#tuesday">Tuesday</a></p>
+			<p class="day"><a href="#wednesday">Wednesday</a></p>
+			<p class="day"><a href="#thursday">Thursday</a></p>
+			<p class="day"><a href="#friday">Friday</a></p>
+			<p class="day"><a href="#saturday">Saturday</a></p>
+			<p class="day"><a href="#sunday">Sunday</a></p>
+		</div>
+		<div id="monday" class="menu">
+			<h1 class="dayHeading">Monday <span class="caloriesLeft" id="mondayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseMonday(i = 0)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseMonday(i = 1)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseMonday(i = 2)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseMonday(i = 3)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseMonday(i = 4)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseMonday(i = 5)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseMonday(i = 6)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseMonday(i = 7)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseMonday(i = 8)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseMonday(i = 9)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseMonday(i = 10)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseMonday(i = 11)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="tuesday" class="menu">
+			<h1 class="dayHeading">Tuesday <span class="caloriesLeft" id="tuesdayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseTuesday(i = 12)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseTuesday(i = 13)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseTuesday(i = 14)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseTuesday(i = 15)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseTuesday(i = 16)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseTuesday(i = 17)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseTuesday(i = 18)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseTuesday(i = 19)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"//>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseTuesday(i = 20)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked"  name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseTuesday(i = 21)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseTuesday(i = 22)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseTuesday(i = 23)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="wednesday" class="menu">
+			<h1 class="dayHeading">Wednesday <span class="caloriesLeft" id="wednesdayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseWednesday(i = 24)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseWednesday(i = 25)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseWednesday(i = 26)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseWednesday(i = 27)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseWednesday(i = 28)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseWednesday(i = 29)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseWednesday(i = 30)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseWednesday(i = 31)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseWednesday(i = 32)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseWednesday(i = 33)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseWednesday(i = 34)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseWednesday(i = 35)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="thursday" class="menu">
+			<h1 class="dayHeading">Thursday <span class="caloriesLeft" id="thursdayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="choosethursday(i = 36)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="choosethursday(i = 37)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="choosethursday(i = 38)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="choosethursday(i = 39)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="choosethursday(i = 40)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="choosethursday(i = 41)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="choosethursday(i = 42)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="choosethursday(i = 43)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="choosethursday(i = 44)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="choosethursday(i = 45)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="choosethursday(i = 46)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="choosethursday(i = 47)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="friday" class="menu">
+			<h1 class="dayHeading">Friday <span class="caloriesLeft" id="fridayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseFriday(i = 48)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseFriday(i = 49)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseFriday(i = 50)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseFriday(i = 51)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseFriday(i = 52)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseFriday(i = 53)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseFriday(i = 54)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseFriday(i = 55)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseFriday(i = 56)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseFriday(i = 57)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseFriday(i = 58)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseFriday(i = 59)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="saturday" class="menu">
+			<h1 class="dayHeading">Saturday <span class="caloriesLeft" id="saturdayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseSaturday(i = 60)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseSaturday(i = 61)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseSaturday(i = 62)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseSaturday(i = 63)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseSaturday(i = 64)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseSaturday(i = 65)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseSaturday(i = 66)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseSaturday(i = 67)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseSaturday(i = 68)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseSaturday(i = 69)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseSaturday(i = 70)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseSaturday(i = 71)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="sunday" class="menu">
+			<h1 class="dayHeading">Sunday <span class="caloriesLeft" id="sundayCalories"></span></h1>
+			<h3>Breakfast</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice banana" onclick="chooseSunday(i = 72)">
+						<div class="foodChoice-header">
+							<label>Banana
+								<input type="checkbox" value="105"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice apple" onclick="chooseSunday(i = 73)">
+						<div class="foodChoice-header">
+							<label>Apple
+								<input type="checkbox" value="95"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice eggs" onclick="chooseSunday(i = 74)">
+						<div class="foodChoice-header">
+							<label>Eggs (2)
+								<input type="checkbox" value="156"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice bacon" onclick="chooseSunday(i = 75)">
+						<div class="foodChoice-header">
+							<label>Bacon (4)
+								<input type="checkbox" value="172"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>			
+			<h3>Lunch</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice grilledCheese" onclick="chooseSunday(i = 76)">
+						<div class="foodChoice-header">
+							<label>Grilled Cheese
+								<input type="checkbox" value="71"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice turkeySandwich" onclick="chooseSunday(i = 77)">
+						<div class="foodChoice-header">
+							<label>Turkey Sandwich
+								<input type="checkbox" value="210"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice cheeseBurger" onclick="chooseSunday(i = 78)">
+						<div class="foodChoice-header">
+							<label>Cheese Burger
+								<input type="checkbox" value="303"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salad" onclick="chooseSunday(i = 79)">
+						<div class="foodChoice-header">
+							<label>Salad
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3>Dinner</h3>
+			<form>
+				<div class="formContainer">
+					<div class="foodChoice pasta" onclick="chooseSunday(i = 80)">
+						<div class="foodChoice-header">
+							<label>Pasta
+								<input type="checkbox" value="200"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+
+					<div class="foodChoice pizza" onclick="chooseSunday(i = 81)">
+						<div class="foodChoice-header">
+							<label>Pizza
+								<input type="checkbox" value="285"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice chicken" onclick="chooseSunday(i = 82)">
+						<div class="foodChoice-header">
+							<label>Chicken
+								<input type="checkbox" value="250"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+					<div class="foodChoice salmon" onclick="chooseSunday(i = 83)">
+						<div class="foodChoice-header">
+							<label>Salmon
+								<input type="checkbox" value="300"  class="checked" name="food"/>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	
+	</div>
+	
+	<footer>
+		<img src="logo.png">
+	</footer>
+	<script src="foodCalc.js"></script>
+	
+	
+</body>
+</html>

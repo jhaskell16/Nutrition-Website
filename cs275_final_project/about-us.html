@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<link href="navigation.css" rel="stylesheet" type="text/css">
+<link href="about.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Nutrition Calculator - About Us</title>
+</head>
+
+<body>
+	<nav id="deskNav">
+		<ul>
+			<li class="navLi"><a href="index.html">Home</a></li>
+			<li class="navLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+		
+			<a href="index.html" class="logo"><img src="logo.png" class="logo" id="logo"></a>
+			
+			<li class="navLi"><a href="nutrition.html">Nutrition</a></li>
+			<li class="navLi"><a href="about-us.html">About Us</a></li>
+		</ul>
+	</nav>
+	
+	<nav id="mobileNav">
+		<a href="index.html" id="navLogoLink"><img src="logo.png" id="navLogo"></a>
+		
+		<div id="hambContainer" onClick="toggle()">
+			<div id="top-ham" class="hamb"></div>
+			<div id="mid-ham" class="hamb"></div>
+			<div id="bottom-ham" class="hamb"></div>
+		</div>
+	</nav>
+	<ul id="mobileUl">
+			<li class="mobileNavLi"><a href="index.html">Home</a></li>
+			<li class="mobileNavLi"><a href="menu-calculator.html">Menu Calculator</a></li>
+			<li class="mobileNavLi"><a href="nutrition.html">Nutrition</a></li>
+			<li class="mobileNavLi"><a href="about-us.html">About Us</a></li>
+		</ul>
+		<div id="hero">
+			<h1 align="center"><br/><br/>About Us</h1>
+		</div>
+	<div style="height: 100vh;">
+	
+		<!--Copy/Paste this div and put in your own info-->
+		<div align="center" id="James">
+			<h3><u>James Haskell</u></h3>
+			<p>I am a senior at the University of Hartford studying Computer Science.</p>
+			<p><strong>E-Mail:</strong> jhaskell@hartford.edu</p>
+		</div>
+		
+		<!--Paste below-->
+		
+		
+	</div>
+	<footer>
+		<img src="logo.png">
+	</footer>
+	<script>
+		
+			function toggle(){
+			var mobileNav = document.getElementById("mobileUl");
+			if(mobileNav.style.display != "block"){
+				mobileNav.style.display = "block";
+			}else{
+				mobileNav.style.display = "none"
+			}
+		}
+		
+		</script>
+</body>
+</html>
